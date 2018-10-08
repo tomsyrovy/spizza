@@ -1,0 +1,102 @@
+/**
+ * Footer
+ */
+
+
+.footer {
+	background: url("#{$assets}/images/table.jpg") repeat-y center top;
+	background-size: cover;
+	position: relative;
+	height: 300px;
+
+	@media only screen and (min-width: $screen-md) {
+		height: 120px;
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		height: 200px;
+		top: -200px;
+	}
+
+	&::before {
+		width: 100%;
+		background: url("#{$assets}/images/footer.png") no-repeat center bottom;
+		background-size: 100%;
+	}
+
+	.bazalka {
+		display: none;
+		@media only screen and (min-width: $screen-lg) {
+			display: block;
+			position: absolute;
+			bottom: 0px;
+			right: 3%;
+			width: 250px;
+		}
+	}
+
+	.footer-logo {
+		position: absolute;
+		background: url("#{$assets}/images/footer-logo-bg.png") no-repeat center top;
+		width: 250px;
+		height: 240px;
+		background-size: 260px 290px;
+		bottom: 0;
+		left: 50%;
+		margin-left: -125px;
+
+		@media only screen and (min-width: $screen-md) {
+			right: 10px;
+			margin: 0;
+		}
+
+		@media only screen and (min-width: $screen-lg) {
+			right: 20%;
+		}
+
+		img {
+			width: 200px;
+			margin-top: 70px;
+		}
+
+		div {
+			margin-top: 20px;
+			color: #fff;
+		}
+	}
+
+	.footer-nav {
+		list-style-type: none;
+		position: absolute;
+		top: 10px;
+		text-transform: uppercase;
+
+		@media only screen and (min-width: $screen-md) {
+			left: 5%;
+			bottom: 50px;
+		}
+
+		@media only screen and (min-width: $screen-lg) {
+			left: 10%;
+		}
+
+		li {
+			display: inline-block;
+			margin: 0 5px;
+		}
+
+		a {
+			color: #fff;
+			text-decoration: none;
+			transition: .3s all;
+
+			&:hover {
+				color: $yellow;
+			}
+		}
+	}
+}

@@ -1,0 +1,56 @@
+{% extends '@App/@layout_unsecured.html.twig' %}
+
+{% block content %}
+
+    <div class="mainContent">
+        <div class="width-container text-left">
+
+            <h1 class="title">Kontakty</h1>
+            {% for localBusiness in localBusinesses %}
+                <h2 class="title">Stánek {{ localBusiness.name }}</h2>
+                <div class="row">
+                    <div class="col-{{ 12/((takeOverTypes|length)+1) }}">
+                        <p><i>{{ localBusiness.address.fullAddress }}</i> (<a target="_blank" title="Zobrazit na mapě" href="{{ localBusiness.mapyCZLink }}">mapa</a>)</p>
+                    </div>
+                    {% for tot in takeOverTypes %}
+                        <div class="col-{{ 12/((takeOverTypes|length)+1) }}">
+                            {% if tot.slug == "vezmu-si-na-stanku" %}
+                                <h3 class="title">Otevírací doba stánku</h3>
+                            {% endif %}
+                            {% if tot.slug == "necham-si-dovezt" %}
+                                <h3 class="title">Příjem objednávek pro rozvoz</h3>
+                            {% endif %}
+                            <div class="openingHours">
+                                {% for op in localBusiness.openingHours %}
+
+                                    {% if op.productTakeOverType == tot %}
+                                        <p><strong>{{ op.day.name }}</strong>: {{ op.timeFrom|date('H:i') }} - {{ op.timeTo|date('H:i') }}</p>
+                                    {% endif %}
+
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+
+            <h2 class="title">Telefonní a e-mailové kontakty</h2>
+            <p>
+                <div><strong>Objednávky</strong>: 77 55 11111</div>
+                <div><strong>Reklamační oddělení</strong>: 734 158 883</div>
+                <div><strong>Obchodní oddělení</strong>: 734 158 882</div>
+            </p>
+
+            <h2 class="title">Společnost ŠPIZZA PIZZA</h2>
+            <p>
+                <div><strong>Obchodní název společnosti</strong>: ŠPIZZA PIZZA s.r.o.</div>
+                <div><strong>IČO</strong>: 05479347</div>
+                <div><strong>Spisová značka</strong>: C 95588 vedená u Krajského soudu v Brně</div>
+                <div><strong>Sídlo</strong>: č.p. 92, 679 39 Úsobrno</div>
+            </p>
+
+        </div>
+    </div>
+
+{% endblock %}
+

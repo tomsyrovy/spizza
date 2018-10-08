@@ -1,0 +1,519 @@
+{
+  "AppBundle\\Entity\\ProductCategory": {
+    "pizza": {
+      "name": "Pizza"
+    },
+    "gyros": {
+      "name": "Gyros"
+    },
+    "nápoje": {
+      "name": "Nápoje"
+    }
+  },
+  "AppBundle\\Entity\\ProductAttribute": {
+    "maso" : {
+      "name" : "Maso"
+    },
+    "vegetariánská" : {
+      "name" : "Vegetariánská"
+    },
+    "veganská" : {
+      "name" : "Veganská"
+    },
+    "pálivá" : {
+      "name" : "Pálivá"
+    },
+    "extra pálivá" : {
+      "name" : "Pálivá"
+    },
+    "sladká" : {
+      "name" : "Na sladko"
+    },
+    "ryba" : {
+      "name" : "S rybou"
+    },
+    "rukola" : {
+      "name" : "S rukolou"
+    }
+  },
+  "AppBundle\\Entity\\ProductLabel": {
+    "novinky" : {
+      "name" : "Novinka"
+    },
+    "pizza měsíce" : {
+      "name" : "Pizza měsíce"
+    }
+  },
+  "AppBundle\\Entity\\ProductTakeoverType": {
+    "stanek" : {
+      "name" : "Vezmu si na stánku"
+    },
+    "rozvoz" : {
+      "name" : "Nechám si dovézt"
+    }
+  },
+  "AppBundle\\Entity\\ProductVariant": {
+    "rodinná" : {
+      "name" : "Rodinná"
+    },
+    "1/4 pizzy" : {
+      "name" : "1/4 pizzy"
+    },
+    "1/8 pizzy" : {
+      "name" : "1/8 pizzy (jeden kousek)"
+    },
+    "tricitka" : {
+      "name" : "Třicítka"
+    },
+    "tricitka půlka" : {
+      "name" : "Třicítka půlka"
+    },
+    "kapsa" : {
+      "name" : "Kapsa"
+    },
+    "bezlepková" : {
+      "name" : "Bezlepková"
+    }
+  },
+  "AppBundle\\Entity\\ProductBase": {
+    "šunková": {
+      "name": "Šunková",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@uzenina"
+      ]
+    },
+    "šunková se žampiony": {
+      "name": "Šunková se žampiony",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@uzenina"
+      ]
+    },
+    "šunková s olivami": {
+      "name": "Šunková s olivami",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@uzenina"
+      ]
+    },
+    "hawai": {
+      "name": "Hawai",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@uzenina",
+        "@na sladko"
+      ]
+    },
+    "sýrová": {
+      "name": "Sýrová",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@vegetariánská"
+      ]
+    },
+    "čabajková": {
+      "name": "Čabajková",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@uzenina",
+        "@pálivá"
+      ]
+    },
+    "špenátová": {
+      "name": "Špenátová",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@uzenina"
+      ]
+    },
+    "salámová": {
+      "name": "Salámová",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@uzenina"
+      ]
+    },
+    "chilli": {
+      "name": "Chilli",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@uzenina",
+        "@pálivá"
+      ]
+    },
+    "slaninová": {
+      "name": "Slaninová",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@uzenina"
+      ]
+    },
+    "anglická": {
+      "name": "Anglická",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@uzenina"
+      ]
+    },
+    "moravská": {
+      "name": "Moravská",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@uzenina"
+      ]
+    },
+    "smetanová": {
+      "name": "Smetanová",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@uzenina"
+      ]
+    },
+    "selská": {
+      "name": "Selská",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@uzenina"
+      ]
+    },
+    "šunková dětská": {
+      "name": "Šunková dětská",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@uzenina"
+      ]
+    },
+    "sýrová dětská": {
+      "name": "Sýrová dětská",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@vegetariánská"
+      ]
+    },
+    "margherita": {
+      "name": "Margherita",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@vegetariánská"
+      ]
+    },
+    "napoletana": {
+      "name": "Napoletana",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@ryba",
+        "@rukola"
+      ]
+    },
+    "jablečná s ořechy": {
+      "name": "Jablečná s ořechy",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@vegetariánská",
+        "@na sladko"
+      ]
+    },
+    "hrušková s gorgonzolou": {
+      "name": "Hrušková s gorgonzolou",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@vegetariánská",
+        "@na sladko"
+      ]
+    },
+    "ananasová s gorgonzolou": {
+      "name": "Ananasová s gorgonzolou",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@vegetariánská",
+        "@na sladko"
+      ]
+    },
+    "hermelínová s brusinkami": {
+      "name": "Hermelínová s brusinkami",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@vegetariánská",
+        "@na sladko"
+      ]
+    },
+    "s parmskou šunkou a parmazánem": {
+      "name": "S parmskou šunkou a parmazánem",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@uzenina",
+        "@rukola"
+      ]
+    },
+    "capricciosa": {
+      "name": "Capricciosa",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@uzenina",
+        "@ryba"
+      ]
+    },
+    "středomořská": {
+      "name": "Středomořská",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@ryba"
+      ]
+    },
+    "tuňáková s olivami": {
+      "name": "Tuňáková s olivami",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@ryba"
+      ]
+    },
+    "klobásová s vejcem": {
+      "name": "Klobásová s vejcem",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@uzenina"
+      ]
+    },
+    "řecká": {
+      "name": "Řecká",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@vegetariánská"
+      ]
+    },
+    "pissaladiѐre": {
+      "name": "Pissaladiѐre",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@ryba",
+        "@rukola"
+      ]
+    },
+    "quatro carne": {
+      "name": "Quatro carne",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@uzenina"
+      ]
+    },
+    "vegan hawaii": {
+      "name": "Vegan hawaii",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@bez mléka",
+        "@na sladko"
+      ]
+    },
+    "vegan olivová": {
+      "name": "Vegan olivová",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@bez mléka"
+      ]
+    },
+    "vegan špenátová": {
+      "name": "Vegan špenátová",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@bez mléka"
+      ]
+    },
+    "vegan selská": {
+      "name": "Vegan selská",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@bez mléka"
+      ]
+    },
+    "vegan moravská": {
+      "name": "Vegan moravská",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@bez mléka"
+      ]
+    },
+    "vegan chilli": {
+      "name": "Vegan chilli",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@bez mléka",
+        "@pálivá"
+      ]
+    },
+    "veget moravská": {
+      "name": "Veget moravská",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@vegetariánská"
+      ]
+    },
+    "veget smetanová": {
+      "name": "Veget smetanová",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@vegetariánská"
+      ]
+    },
+    "veget hawaii": {
+      "name": "Veget hawaii",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@vegetariánská",
+        "@na sladko"
+      ]
+    },
+    "veget chilli": {
+      "name": "Veget chilli",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@vegetariánská",
+        "@pálivá"
+      ]
+    },
+    "veget špenátová": {
+      "name": "Veget špenátová",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@vegetariánská"
+      ]
+    },
+    "mexická": {
+      "name": "Mexická",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@uzenina",
+        "@pálivá"
+      ]
+    },
+    "sýrová se žampiony": {
+      "name": "Sýrová se žampiony",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@vegetariánská"
+      ]
+    },
+    "maďarská": {
+      "name": "Maďarská",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@uzenina",
+        "@pálivá"
+      ]
+    },
+    "klobásová": {
+      "name": "Klobásová",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@uzenina",
+        "@pálivá"
+      ]
+    },
+    "s kuřecím masam a ananasem": {
+      "name": "S kuřecím masam a ananasem",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": []
+    },
+    "slaninová s tvarůžky": {
+      "name": "Slaninová s tvarůžky",
+      "productCategory": [
+        "@pizza"
+      ],
+      "productAttribute": [
+        "@uzenina"
+      ]
+    }
+  }
+}

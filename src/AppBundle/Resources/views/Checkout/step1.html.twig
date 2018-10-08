@@ -1,0 +1,34 @@
+{% extends "@App/@layout_unsecured.html.twig" %}
+
+{% block content %}
+
+    <div class="mainContent">
+        <div class="width-container">
+
+            <div class="row">
+                <div class="col-6">
+                    <h1 class="title">Objednávka</h1>
+                    <div id="cart">
+                        {{ render(controller('AppBundle:Cart:default', {'isCheckout' : true})) }}
+                    </div>
+                </div>
+                <div class="col-6">
+                    <h1 class="title">Zákazník</h1>
+                    <p>Přihlaste se a získáte výhody</p>
+                    <a class="signin cart-button" href="#">Přihlásit se</a>
+                    <div class="separator">-- nebo zadejte své údaje --</div>
+                    <div class="form form-left form-labeled">
+                        {{ form_start(form) }}
+                        {{ form_widget(form) }}
+                            <div class="text-center">
+                                <input type="submit" value="OBJEDNAT" class="button place-order">
+                            </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+/**
+ * Mobile navigation
+ */
+
+
+.nav-mobile {
+
+}
+
+
+
+
+
+// Pokud je mobilní navigace zobrazena, pak ji skryj při rozšíření obrazovky > @screen-md
+//@media only screen and (min-width: $screen-md + 1) {
+@media only screen and (min-width: $screen-md) {
+	.nav-mobile {
+		display: none !important;
+	}
+}

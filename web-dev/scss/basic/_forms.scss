@@ -1,0 +1,65 @@
+/**
+ * Forms
+ */
+
+
+.form-left {
+	text-align: left;
+}
+
+.form-labeled {
+	label {
+		display: block;
+		text-align: left;
+		&:after {
+			content: ":";
+		}
+	}
+}
+
+input[type="text"],
+input[type="email"],
+//input[type="file"],
+textarea {
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: 5px 10px;
+	box-sizing: border-box;
+	width: 100%;
+	margin-bottom: 5px;
+	border-radius: 10px;
+}
+
+select {
+	//-webkit-appearance: none;
+	//border-radius: 0;
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: 5px 10px;
+	box-sizing: border-box;
+	width: 100%;
+	margin-bottom: 5px;
+	border-radius: 10px;
+}
+
+// .wpcf7 {
+// 	.ajax-loader {
+// 		display: none !important;
+// 	}
+//
+// 	.wpcf7-not-valid-tip {
+// 		font-size: 15px;
+// 		color: red;
+// 	}
+//
+// 	.wpcf7-response-output {
+// 		margin: 0;
+// 		padding: 5px 10px;
+// 	}
+//
+// 	.wpcf7-validation-errors {
+// 		border: 0;
+// 		background: red;
+// 		color: #fff;
+// 	}
+// }

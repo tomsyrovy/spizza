@@ -1,0 +1,199 @@
+/**
+ * takeover
+ */
+
+
+.takeover-container {
+	background: url("#{$assets}/images/table.jpg") repeat center top;
+	background-size: 100%;
+	position: relative;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	color: #fff;
+
+	label {
+		display: none;
+	}
+
+	input {
+		border-radius: 50px;
+	}
+
+	.nadpis {
+		width: 100%;
+		text-align: center;
+		color: $yellow;
+		font-size: 33px;
+		line-height: 40px;
+		text-transform: uppercase;
+	}
+
+	.flex-container {
+		display: flex;
+		justify-content: space-around;
+		margin-top: 20px;
+		flex-direction: column;
+
+		@media only screen and (min-width: $screen-md) {
+			flex-direction: row;
+		}
+	}
+
+	.item {
+		text-align: center;
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-right: auto;
+		margin-left: auto;
+		.productTakeoverType {
+			border: none;
+			outline: none;
+			padding-top: 100px;
+			width: 100%;
+			content: '';
+			color: #fff;
+			font-size: 30px;
+			text-decoration: underline;
+			cursor: pointer;
+			margin-top: 60px;
+			background-color: transparent;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: 50%;
+			&.active {
+				background-position: center top;
+				background-size: auto;
+			}
+			@media only screen and (min-width: $screen-md) {
+				padding-top: 140px;
+				margin-top: 0;
+			}
+		}
+		&.dovoz {
+			.productTakeoverType {
+				background-image: url("#{$assets}/images/rozvoz.png");
+				&.active {
+					background-image: url("#{$assets}/images/rozvoz-active.png");
+				}
+			}
+		}
+		&.stanek {
+			.productTakeoverType {
+				background-image: url("#{$assets}/images/stanek.png");
+				&.active {
+					background-image: url("#{$assets}/images/stanek-active.png");
+				}
+			}
+		}
+
+	}
+
+
+	.productTakeoverContainer {
+		margin: 20px 70px 0 70px;
+
+		.localBusiness {
+			display: block;
+			width: 294px;
+			border: none;
+			outline: none;
+			color: #fff;
+			border-radius: 50%;
+			text-transform: uppercase;
+			font-size: 30px;
+			margin-bottom: 3px;
+			padding: 20px 0px;
+			background: url("#{$assets}/images/bubble.png") no-repeat center;
+			pointer-events: all;
+			transition: .4s all;
+			cursor: pointer;
+
+			&:hover {
+				transform: scale(1.1);
+				color: $yellow;
+				background: url("#{$assets}/images/bubble-hover.png") no-repeat center;
+			}
+
+			&.active {
+				color: $yellow;
+				background: url("#{$assets}/images/bubble-hover.png") no-repeat center;
+			}
+
+		}
+
+		.takeOver-info {
+			h2 {
+				font-size: 18px;
+			}
+			p {
+				margin-top: 0;
+				margin-bottom: 15px;
+			}
+			.ops {
+				margin: 10px 0;
+				p {
+					margin-bottom: 2px;
+				}
+			}
+			.takeOver-spinner {
+				display: none;
+				color: $white;
+				text-align: center;
+			}
+		}
+
+		input[type="text"] {
+			width: 80%;
+			color: #000;
+			outline: none;
+			float: right;
+		}
+
+		input[type="submit"] {
+			background: none;
+			border: none;
+			outline: none;
+			width: 80%;
+			background-color: $green;
+			display: block;
+			color: #fff;
+			font-size: 18px;
+			border-radius: 50px;
+			padding: 8px 23px;
+			text-transform: uppercase;
+			text-decoration: none;
+			margin-top: 15px;
+			transition: .4s all;
+			float: right;
+			cursor: pointer;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+
+	}
+
+	.rukola {
+		display: none;
+		@media only screen and (min-width: $screen-lg) {
+			display: block;
+			position: absolute;
+			top: -40px;
+			right: -50px;
+			width: 250px;
+			z-index: 250;
+		}
+	}
+	.bazalka {
+		display: none;
+		@media only screen and (min-width: $screen-lg) {
+			display: block;
+			position: absolute;
+			top: -65px;
+			left: -35px;
+			width: 250px;
+			z-index: 250;
+		}
+	}
+}

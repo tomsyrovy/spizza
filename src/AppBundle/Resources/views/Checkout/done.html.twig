@@ -1,0 +1,65 @@
+{% extends '@App/@layout_unsecured.html.twig' %}
+
+{% block content %}
+
+    <div class="mainContent">
+        <div class="width-container">
+
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="title">Objednávku jsme přijali!</h1>
+                    <p>Objednávka získala číslo: <strong>{{ commission.number }}</strong></p>
+                    {% if commission.cart.takeOverType.slug == 'necham-si-dovezt' %}
+                        <p>Vše připravíme, zabalíme a dovezeme na adresu <strong>{{ commission.customer.address.fullAddress }}</strong> za <strong>XX minut</strong>.</p>
+                    {% else %}
+                        <p>Vše připravíme, zabalíme a nachystáme u nás na stánku <strong>XXXX</strong> na adrese <strong>XXXX</strong> (<a href="#">mapa</a>). Vaši objednávku si můžete vyzvednout za <strong>XXX minut</strong>.</p>
+                    {% endif %}
+                    <p>V případě jakýkoliv dotazů, či připomínek nás neváhejte kontaktovat na <strong>XXX YYY ZZZ</strong>.</p>
+
+                    <h2 class="title">Rekapitulace objednávky</h2>
+                    <div class="row">
+                        <div class="col-6">
+                            <h3 class="title">Položky objednávky</h3>
+                            {% set cart = commission.cart %}
+                            <div class="cartContent" id="cartContent" data-cartCartItems="{{ cart.cartItems|length }}" data-cartTakeoverTypeSlug="{{ cart.takeOverType.slug }}">
+                                {{ include('@App/Commission/@list.twig', {'cart' : cart, 'editable' : false}) }}
+                            </div>
+
+                        </div>
+                        <div class="col-6">
+                            <h3 class="title">Zákazník</h3>
+                            {% set customer = commission.customer %}
+                            <div class="customer">
+                                <p><strong>{{ customer.firstname }} {{ customer.lastname }}</strong></p>
+                                <p>{{ customer.email }}</p>
+                                <p>{{ customer.telephone }}</p>
+                            </div>
+                            <h3 class="title">Informace o objednávce</h3>
+                            <div class="commissionInfo">
+                                <p><strong>Číslo objednávky</strong>: {{ commission.number }}</p>
+                                <p><strong>Vytvoření objednávky</strong>: {{ commission.createdAt|date("j. n. Y H:i") }}</p>
+                                <p><strong>Typ předání</strong>: {{ commission.cart.takeOverType.name }}</p>
+                                {% if commission.cart.takeOverType.slug == 'necham-si-dovezt' %}
+                                    <p><strong>Adresa doručení</strong>: {{ commission.customer.address.fullAddress }}</p>
+                                    <p><strong>Předpokládaný čas doručení</strong>: j.n.y hh:mm</p>
+                                {% else %}
+                                    <p><strong>Místo vyzvednutí</strong>: mmm (<a href="#">mapa</a>)</p>
+                                    <p><strong>Předpokládaný čas vyzvednutí</strong>: j.n.y hh:mm</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <a class="cart-button" href="{{ path('app.default.index') }}">Zpět na hlavní stránku</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
+

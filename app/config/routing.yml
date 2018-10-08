@@ -1,0 +1,21 @@
+NelmioApiDocBundle:
+  resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+  prefix:   /api/doc
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+static:
+    resource: "@StaticBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+admin_area:
+    resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
+    prefix: /admin
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin

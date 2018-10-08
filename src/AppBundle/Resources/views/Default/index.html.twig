@@ -1,0 +1,226 @@
+{% extends "@App/@layout_unsecured.html.twig" %}
+
+{% block content %}
+
+    <!-- The Modal -->
+    <div id="modal_productConfigure" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="spinner">
+                <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+            </div>
+            <div class="modal-content-inner"></div>
+        </div>
+    </div>
+
+    <!-- Slider -->
+    <div class="swiper">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="{{ asset('assets/images/slider/maminkam.jpg') }}" alt="*">
+                </div> <!-- .swiper-slide -->
+                <div class="swiper-slide">
+                    <img src="{{ asset('assets/images/slider/italiano.jpg') }}" alt="*">
+                </div> <!-- .swiper-slide -->
+                <div class="swiper-slide">
+                    <img src="{{ asset('assets/images/slider/veganska.jpg') }}" alt="*">
+                </div> <!-- .swiper-slide -->
+            </div> <!-- .swiper-wrapper -->
+
+            <div class="swiper-button swiper-button-prev swiper-button-black"></div>
+            <div class="swiper-button swiper-button-next swiper-button-black"></div>
+
+        </div> <!-- .swiper-container -->
+    </div> <!-- /.swiper -->
+
+
+    <div class="about-us">
+        {#<div class="about-us-inner">#}
+            {#<h1>O nás</h1>#}
+            {#<p>#}
+                {#ŠPIZZA rodinná pizza je moderní koncept rychlého občerstvení, kde se rychle a kvalitně nají celá rodina včetně celiaků a veganů.#}
+            {#</p>#}
+            {#<p>#}
+                {#Zapomeňte na smažení. Ze základních surovin tu vyrábíme pizzu a gyros. Vše na místě, z vlastních receptur a bez polotovarů.#}
+            {#</p>#}
+        {#</div>#}
+    </div>
+
+    <section class="takeover-container" id="objednat-si">
+        <img src="{{ asset('assets/images/rukola.png') }}" alt="rukola" class="rukola">
+        <img src="{{ asset('assets/images/bazalka.png') }}" alt="bazalka" class="bazalka">
+        <div class="width-container">
+            <h2 class="nadpis">
+                Nechte si dovézt, <br>
+                nebo si vyzvedněte na stánku se slevou!
+            </h2>
+            <div class="container productTakeoverTypes" data-default="{{ cartTakeoverType.slug }}">
+
+                <div class="items flex-container">
+                    <div class="stanek item">
+                        <button class="productTakeoverType" data-slug="{{productTakeoverTypes.0.slug}}">{{productTakeoverTypes.0.name}}</button>
+                    </div>
+
+                    <div class="dovoz item">
+                        <button class="productTakeoverType" data-slug="{{productTakeoverTypes.1.slug}}">{{productTakeoverTypes.1.name}}</button>
+                    </div>
+                </div>
+
+                <div class="productTakeoverContainers">
+                    <div class="row productTakeoverContainer" data-rel="vezmu-si-na-stanku">
+                        <div class="col-6">
+                            {% for localBusiness in localBusinesses %}
+                                <button class="localBusiness localBusiness-btn" data-slug="{{localBusiness.slug}}">{{localBusiness.name}}</button>
+                            {% endfor %}
+                        </div>
+                        <div class="col-6 takeOver-info">
+                            <div class="takeOver-spinner spinner-stanek">
+                                <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                            </div>
+                            <div id="openingHours"></div>
+                        </div>
+                    </div>
+
+                    <div class="row productTakeoverContainer" data-rel="necham-si-dovezt">
+                        <div class="col-6 takeOver-info">
+                            <div class="takeOver-spinner spinner-rozvoz">
+                                <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                            </div>
+                            <div id="deliveryInfo"></div>
+                        </div>
+                        <div class="col-6">
+                            {{ form_start(addressForm) }}
+                            {{ form_widget(addressForm) }}
+                            <input type="submit" value="Nastavit adresu">
+                            {{ form_end(addressForm) }}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="productContainer">
+        <img src="{{ asset('assets/images/rajcata.png') }}" alt="rajcata" class="rajcata">
+        <img src="{{ asset('assets/images/prkenko.png') }}" alt="prkenko" class="prkenko">
+
+        <div class="width-container">
+            <div class="productCategories">
+                <nav>
+                    {% for productCategory in productCategories %}
+                        <button class="productCategory" data-slug="{{productCategory.slug}}">{{productCategory.name}}</button>
+                    {% endfor %}
+                </nav>
+            </div>
+
+            <div class="productAttributes">
+                <nav>
+                    {% for productAttribute in productAttributes %}
+                        <button class="productAttribute" data-slug="{{productAttribute.slug}}">{{productAttribute.name}}</button>
+                    {% endfor %}
+                </nav>
+            </div>
+            <div class="productsContainer">
+                <div class="products">
+
+                    {% for product in products %}
+                        <div class="product" data-productCategories="{{ product.getSlugs('productCategories') }}" data-productAttributes="{{ product.getSlugs('productAttributes') }}">
+                            <div class="productInner">
+                                <div class="product-labels">
+                                    {% for label in product.productLabels %}
+                                        <div class="product-label">{{label.name}}</div>
+                                    {% endfor %}
+                                </div>
+                                <div class="product-attributes">
+                                    {% for attribute in product.productAttributes %}
+                                        {% if attribute.slug == 'uzenina' %}
+                                            {#<img src="" class="attribute-img" alt="uzenina">#}
+
+                                        {% elseif attribute.slug == 'sladka' %}
+                                            {#<img src="" class="attribute-img" alt="sladka">#}
+
+                                        {% elseif attribute.slug == 'vegetarianska' %}
+                                            {#<img src="" class="attribute-img" alt="vegetarianska">#}
+
+                                        {% elseif attribute.slug == 'paliva' %}
+                                            <img src="{{ asset('assets/images/papricka.png') }}" class="attribute-img paprika" alt="paliva">
+
+                                        {% elseif attribute.slug == 'extra-paliva' %}
+                                            <img src="{{ asset('assets/images/papricka.png') }}" class="attribute-img paprika" alt="extra paliva">
+
+                                        {% elseif attribute.slug == 's-rybou' %}
+                                            {#<img src="" class="attribute-img" alt="rybou">#}
+
+                                        {% elseif attribute.slug == 's-rukolou' %}
+                                            {#<img src="" class="attribute-img" alt="rukolou">#}
+
+                                        {% elseif attribute.slug == 'veganska' %}
+                                            <img src="{{ asset('assets/images/vegan.png') }}" class="attribute-img vegan" alt="veganska">
+
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                                <img alt="{{product.name}}" src="{{ asset('uploads/product_bases/thumbnails/' ~ product.imageName) }}">
+                                <div class="product-name">{{product.name}}</div>
+                                {% if product.productMaterials|length > 0 %}
+                                    <div class="product-materials">
+                                        {% for material in product.productMaterials %}
+                                            <span>{% if loop.first %}{{material.name}}{% else %}{{material.name|lower}}{% endif %}{% if not loop.last %}, {% endif %}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                                {% if product.productAllergens|length > 0 %}
+                                    <div class="product-allergens">
+                                        Alergeny:
+                                        {% for allergen in product.productAllergens %}
+                                            <div>
+                                                {{allergen.name}}{% if not loop.last %}, {% endif %}
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                                {% set c = '' %}
+                                {% if product.products|length <= 2 %}
+                                    {% set c = ' hidden' %}
+                                {% endif %}
+                                <div class="product-variants{{ c }}">
+                                    <div class="dropdown">
+                                        <button data-rel="pb_{{ product.id }}" class="dropbtn product-variant-first"><span class="text">Zvolte variantu: </span><span class="arrow"><i class="fa fa-caret-down" aria-hidden="true"></i></span></button>
+                                        <div id="pb_{{ product.id }}" class="dropdown-content">
+                                            {% for p in product.products %}
+                                                <div class="dropdown-option product-variant" data-productVariant="{{ p.productTakeoverType.slug }}" data-price="{{ p.price }}" data-id="{{ p.id }}">
+                                                    {% if p.price == p.price|round %}
+                                                        {% set cleanPrice = p.price|round ~ " Kč" %}
+                                                    {% else %}
+                                                        {% set cleanPrice = p.price|number_format(2, ',', ' ') ~ " Kč" %}
+                                                    {% endif %}
+                                                    {% if p.productVariant is not null and p.productVariant %}
+                                                        {{ p.productVariant.name }}: {{ cleanPrice }}
+                                                    {% else %}
+                                                        {{ cleanPrice }}
+                                                    {% endif %}
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="chooseProduct" data-product-id="">Vybrat</button>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="cartContainer">
+                    <div class="cart">
+                        <h3>Vaše objednávka</h3>
+                        <div id="cart">
+                            {{ render(controller('AppBundle:Cart:default', {'isCheckout' : false})) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

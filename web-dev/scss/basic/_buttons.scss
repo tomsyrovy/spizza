@@ -1,0 +1,59 @@
+/**
+ * Button
+ */
+
+.button {
+	background: #000;
+	color: #fff;
+	font-size: 20px;
+	text-decoration: none;
+	padding: 12px 22px;
+	margin: 20px 0 0;
+	display: inline-block;
+	cursor: pointer;
+	border: 0;
+	@include transition(.2s);
+
+	&:hover {
+		@include transition(.2s);
+	}
+}
+
+.buttons-container {
+	text-align: center;
+	margin: 30px 0;
+	width: 100%;
+}
+
+.cart-button {
+	background: none;
+	border: none;
+	outline: none;
+	background-color: $green;
+	display: block;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 50px;
+	padding: 8px 23px;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	text-transform: uppercase;
+	text-decoration: none;
+	margin-top: 15px;
+	transition: .4s all;
+
+	&:hover {
+		transform: scale(1.1);
+	}
+}
+
+.place-order {
+	background-color: $red;
+	font-size: 25px;
+	padding: 15px 23px;
+	border-radius: 20px;
+	&:hover {
+		transform: scale(1.1);
+	}
+}

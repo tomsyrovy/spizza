@@ -1,0 +1,963 @@
+{
+  "AppBundle\\Entity\\CommissionStatus": {
+    "prijata": {
+      "name": "Přijatá"
+    },
+    "zpracovava_se": {
+      "name": "Zpracovává se"
+    },
+    "hotova": {
+      "name": "Hotová"
+    },
+    "stornovana": {
+      "name": "Stornovaná"
+    }
+  },
+  "AppBundle\\Entity\\ProductCategory": {
+    "pizza": {
+      "name": "Pizza"
+    },
+    "gyros": {
+      "name": "Gyros"
+    },
+    "nápoje": {
+      "name": "Nápoje"
+    }
+  },
+  "AppBundle\\Entity\\ProductLabel": {
+    "novinky" : {
+      "name" : "Novinka"
+    },
+    "pizza měsíce" : {
+      "name" : "Pizza měsíce"
+    }
+  },
+  "AppBundle\\Entity\\ProductTakeoverType": {
+    "stanek" : {
+      "name" : "Vezmu si na stánku"
+    },
+    "rozvoz" : {
+      "name" : "Nechám si dovézt"
+    }
+  },
+  "AppBundle\\Entity\\PaymentMethod": {
+    "cashOnDelivery": {
+      "name": "V hotovosti při převzetí",
+      "takeOverType": ["@stanek", "@rozvoz"]
+    }
+  },
+  "AppBundle\\Entity\\ProductAddition": {
+    "prisadaPizza" : {
+      "name" : "Přísada na pizzu",
+      "multiple" : true
+    },
+    "smetanovyzaklad" : {
+      "name" : "Změna základu pizzy na smetanový",
+      "multiple" : false
+    },
+    "smetanovyzaklad1/4" : {
+      "name" : "Změna základu 1/4 pizzy na smetanový",
+      "multiple" : false
+    },
+    "plnenyokraj30" : {
+      "name" : "Plněný okraj pro pizzu Třicítku",
+      "multiple" : false
+    },
+    "plnenyokraj50" : {
+      "name" : "Plněný okraj pro pizzu Rodinnou",
+      "multiple" : false
+    },
+    "poterka" : {
+      "name" : "Potěrka",
+      "multiple" : false
+    },
+    "detskezdobeni" : {
+      "name" : "Dětské zdobení",
+      "multiple" : false
+    },
+    "omacka" : {
+      "name" : "Omáčka 1",
+      "multiple" : false
+    },
+    "omacka2" : {
+      "name" : "Omáčka 2",
+      "multiple" : false
+    }
+  },
+  "AppBundle\\Entity\\ProductAdditionItem": {
+    "prisadaPizza_eidam": {
+      "name": "Eidam (40g)",
+      "surcharge": 15,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "prisadaPizza_mozzarella": {
+      "name": "Mozzarella (40g)",
+      "surcharge": 15,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "prisadaPizza_niva": {
+      "name": "Niva (20g)",
+      "surcharge": 10,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "prisadaPizza_uzený": {
+      "name": "Uzený sýr (20g)",
+      "surcharge": 10,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "prisadaPizza_tvarůžky": {
+      "name": "Tvarůžky (30g)",
+      "surcharge": 20,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "prisadaPizza_camembert": {
+      "name": "Camembert (30g)",
+      "surcharge": 20,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "prisadaPizza_gorgonzola": {
+      "name": "Gorgonzola (20g)",
+      "surcharge": 15,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "prisadaPizza_parmazán": {
+      "name": "Parmazán (10g)",
+      "surcharge": 10,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "prisadaPizza_alpinnetta": {
+      "name": "Alpinnetta (30g)",
+      "surcharge": 10,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "prisadaPizza_korbáčik": {
+      "name": "Korbáčik (10g)",
+      "surcharge": 14,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "prisadaPizza_balkánský": {
+      "name": "Balkánský sýr (20g)",
+      "surcharge": 12,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "prisadaPizza_šunka": {
+      "name": "Šunka (40g)",
+      "surcharge": 15,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "prisadaPizza_slanina": {
+      "name": "Slanina (40g)",
+      "surcharge": 15,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "prisadaPizza_paprikáš": {
+      "name": "Paprikáš (30g)",
+      "surcharge": 10,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "prisadaPizza_parmská_šunka": {
+      "name": "Parmská šunka (20g)",
+      "surcharge": 12,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "prisadaPizza_klobása": {
+      "name": "Klobása (30g)",
+      "surcharge": 10,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "prisadaPizza_kmotrova_klobása": {
+      "name": "Kmotrova klobása (10g)",
+      "surcharge": 10,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "prisadaPizza_smetana": {
+      "name": "Smetana",
+      "surcharge": 10,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "prisadaPizza_beraní_rohy": {
+      "name": "Beraní rohy (20g)",
+      "surcharge": 10,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "prisadaPizza_olivy": {
+      "name": "Olivy (20g)",
+      "surcharge": 10,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "prisadaPizza_cibule": {
+      "name": "Cibule (30g)",
+      "surcharge": 10,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "prisadaPizza_feferonky": {
+      "name": "Feferonky (20g)",
+      "surcharge": 10,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "prisadaPizza_ananas": {
+      "name": "Ananas (30g)",
+      "surcharge": 15,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "prisadaPizza_žampiony": {
+      "name": "Žampiony (20g)",
+      "surcharge": 10,
+      "productAddition": [
+        "@prisadaPizza"
+      ]
+    },
+    "omacka_zadna" : {
+      "name" : "Žádná omáčka",
+      "surcharge" : 0,
+      "productAddition" : ["@omacka", "@omacka2"]
+    },
+    "omacka_tatarka" : {
+      "name" : "Tatarka",
+      "surcharge" : 0,
+      "productAddition" : ["@omacka", "@omacka2"]
+    },
+    "omacka_tzatziky" : {
+      "name" : "Tzatziky",
+      "surcharge" : 0,
+      "productAddition" : ["@omacka", "@omacka2"]
+    },
+    "omacka_bylinky" : {
+      "name" : "Bylinky",
+      "surcharge" : 0,
+      "productAddition" : ["@omacka", "@omacka2"]
+    },
+    "omacka_chilli" : {
+      "name" : "Chilli",
+      "surcharge" : 0,
+      "productAddition" : ["@omacka", "@omacka2"]
+    },
+    "omacka_cesnek" : {
+      "name" : "Česnek",
+      "surcharge" : 0,
+      "productAddition" : ["@omacka", "@omacka2"]
+    },
+    "omacka_kari" : {
+      "name" : "Kari",
+      "surcharge" : 0,
+      "productAddition" : ["@omacka", "@omacka2"]
+    },
+    "plnenyokraj30_nic" : {
+      "name" : "Bez plněného okraje",
+      "surcharge" : 0,
+      "productAddition" : ["@plnenyokraj30"]
+    },
+    "mozzarella" : {
+      "name" : "Mozzarella",
+      "surcharge" : 30, 
+      "productAddition" : ["@plnenyokraj30"]
+    },
+    "uzenysyr" : {
+      "name" : "Uzený sýr",
+      "surcharge" : 30,
+      "productAddition" : ["@plnenyokraj30"]
+    },
+    "niva" : {
+      "name" : "Niva",
+      "surcharge" : 30,
+      "productAddition" : ["@plnenyokraj30"]
+    },
+    "hot-dog" : {
+      "name" : "Hot-dog",
+      "surcharge" : 30,
+      "productAddition" : ["@plnenyokraj30"]
+    },
+    "plnenyokraj50_nic" : {
+      "name" : "Bez plněného okraje",
+      "surcharge" : 0,
+      "productAddition" : ["@plnenyokraj50"]
+    },
+    "mozzarella50" : {
+      "name" : "Mozzarella",
+      "surcharge" : 50,
+      "productAddition" : ["@plnenyokraj50"]
+    },
+    "uzenysyr50" : {
+      "name" : "Uzený sýr",
+      "surcharge" : 50,
+      "productAddition" : ["@plnenyokraj50"]
+    },
+    "niva50" : {
+      "name" : "Niva",
+      "surcharge" : 50,
+      "productAddition" : ["@plnenyokraj50"]
+    },
+    "hot-dog50" : {
+      "name" : "Hot-dog",
+      "surcharge" : 50,
+      "productAddition" : ["@plnenyokraj50"]
+    },
+    "bezpoterky" : {
+      "name" : "Bez potěrky",
+      "surcharge" : 0,
+      "productAddition" : ["@poterka"]
+    },
+    "cesnekova" : {
+      "name" : "Česneková",
+      "surcharge" : 0,
+      "productAddition" : ["@poterka"]
+    },
+    "bylinkova" : {
+      "name" : "Bylinková",
+      "surcharge" : 0,
+      "productAddition" : ["@poterka"]
+    },
+    "chilli" : {
+      "name" : "Chilli",
+      "surcharge" : 0,
+      "productAddition" : ["@poterka"]
+    },
+    "sm_z_ne" : {
+      "name" : "Ne",
+      "surcharge" : 0,
+      "productAddition" : ["@smetanovyzaklad"]
+    },
+    "sm_z_ano" : {
+      "name" : "Ano",
+      "surcharge" : 10,
+      "productAddition" : ["@smetanovyzaklad"]
+    },
+    "sm_z1/4_ne" : {
+      "name" : "Ne",
+      "surcharge" : 0,
+      "productAddition" : ["@smetanovyzaklad1/4"]
+    },
+    "sm_z1/4_ano" : {
+      "name" : "Ano",
+      "surcharge" : 2.5,
+      "productAddition" : ["@smetanovyzaklad1/4"]
+    },
+    "detskezdobeni_ne" : {
+      "name" : "Ne",
+      "surcharge" : 0,
+      "productAddition" : ["@detskezdobeni"]
+    },
+    "detskezdobeni_ano" : {
+      "name" : "Ano (zdarma)",
+      "surcharge" : 0,
+      "productAddition" : ["@detskezdobeni"]
+    }
+  },
+  "AppBundle\\Entity\\Address" : {
+    "addressBoskovice" : {
+      "street" : "Rovná 2460/4",
+      "city" : "Boskovice",
+      "zipcode" : "680 01"
+    },
+    "addressVyskov" : {
+      "street" : "Cukrovarská 492/4",
+      "city" : "Vyškov",
+      "zipcode" : "682 01"
+    },
+    "addressZabreh" : {
+      "street" : "Leštinská 2336/2",
+      "city" : "Zábřeh na Moravě",
+      "zipcode" : "789 01"
+    },
+    "addressUherskyBrod" : {
+      "street" : "Vlčnovská 2514",
+      "city" : "Uherský Brod",
+      "zipcode" : "688 01"
+    },
+    "addressMohelnice" : {
+      "street" : "Družstevní",
+      "city" : "Mohelnice",
+      "zipcode" : "789 85"
+    }
+  },
+  "AppBundle\\Entity\\Day": {
+    "pondeli": {
+      "name": "Pondělí",
+      "dayOfWeek": 1
+    },
+    "utery": {
+      "name": "Úterý",
+      "dayOfWeek": 2
+    },
+    "streda": {
+      "name": "Středa",
+      "dayOfWeek": 3
+    },
+    "ctvrtek": {
+      "name": "Čtvrtek",
+      "dayOfWeek": 4
+    },
+    "patek": {
+      "name": "Pátek",
+      "dayOfWeek": 5
+    },
+    "sobota": {
+      "name": "Sobota",
+      "dayOfWeek": 6
+    },
+    "nedele": {
+      "name": "Neděle",
+      "dayOfWeek": 7
+    }
+  },
+  "AppBundle\\Entity\\LocalBusiness": {
+    "boskovice": {
+      "name": "Boskovice",
+      "address": "@addressBoskovice"
+    },
+    "vyskov": {
+      "name": "Vyškov",
+      "address": "@addressVyskov"
+    },
+    "zabreh": {
+      "name": "Zábřeh",
+      "address": "@addressZabreh"
+    },
+    "uherskybrod": {
+      "name": "Uherský Brod",
+      "address": "@addressUherskyBrod"
+    },
+    "mohelnice": {
+      "name": "Mohelnice",
+      "address": "@addressMohelnice"
+    }
+  },
+  "AppBundle\\Entity\\OpeningHour" : {
+    "stanek_boskovice_pondeli" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@boskovice",
+      "day" : "@pondeli",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_boskovice_utery" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@boskovice",
+      "day" : "@utery",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_boskovice_streda" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@boskovice",
+      "day" : "@streda",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_boskovice_ctvrtek" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@boskovice",
+      "day" : "@ctvrtek",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_boskovice_patek" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@boskovice",
+      "day" : "@patek",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "22:00:00"
+    },
+    "stanek_boskovice_sobota" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@boskovice",
+      "day" : "@sobota",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "22:00:00"
+    },
+    "stanek_boskovice_nedele" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@boskovice",
+      "day" : "@nedele",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_vyskov_pondeli" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@vyskov",
+      "day" : "@pondeli",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_vyskov_utery" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@vyskov",
+      "day" : "@utery",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_vyskov_streda" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@vyskov",
+      "day" : "@streda",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_vyskov_ctvrtek" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@vyskov",
+      "day" : "@ctvrtek",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_vyskov_patek" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@vyskov",
+      "day" : "@patek",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "22:00:00"
+    },
+    "stanek_vyskov_sobota" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@vyskov",
+      "day" : "@sobota",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "22:00:00"
+    },
+    "stanek_vyskov_nedele" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@vyskov",
+      "day" : "@nedele",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_zabreh_pondeli" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@zabreh",
+      "day" : "@pondeli",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_zabreh_utery" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@zabreh",
+      "day" : "@utery",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_zabreh_streda" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@zabreh",
+      "day" : "@streda",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_zabreh_ctvrtek" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@zabreh",
+      "day" : "@ctvrtek",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_zabreh_patek" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@zabreh",
+      "day" : "@patek",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "22:00:00"
+    },
+    "stanek_zabreh_sobota" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@zabreh",
+      "day" : "@sobota",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "22:00:00"
+    },
+    "stanek_zabreh_nedele" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@zabreh",
+      "day" : "@nedele",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_uherskybrod_pondeli" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@uherskybrod",
+      "day" : "@pondeli",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_uherskybrod_utery" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@uherskybrod",
+      "day" : "@utery",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_uherskybrod_streda" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@uherskybrod",
+      "day" : "@streda",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_uherskybrod_ctvrtek" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@uherskybrod",
+      "day" : "@ctvrtek",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_uherskybrod_patek" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@uherskybrod",
+      "day" : "@patek",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "22:00:00"
+    },
+    "stanek_uherskybrod_sobota" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@uherskybrod",
+      "day" : "@sobota",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "22:00:00"
+    },
+    "stanek_uherskybrod_nedele" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@uherskybrod",
+      "day" : "@nedele",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_mohelnice_pondeli" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@mohelnice",
+      "day" : "@pondeli",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_mohelnice_utery" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@mohelnice",
+      "day" : "@utery",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_mohelnice_streda" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@mohelnice",
+      "day" : "@streda",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_mohelnice_ctvrtek" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@mohelnice",
+      "day" : "@ctvrtek",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "stanek_mohelnice_patek" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@mohelnice",
+      "day" : "@patek",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "22:00:00"
+    },
+    "stanek_mohelnice_sobota" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@mohelnice",
+      "day" : "@sobota",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "22:00:00"
+    },
+    "stanek_mohelnice_nedele" : {
+      "productTakeoverType" : "@stanek",
+      "localBusiness" : "@mohelnice",
+      "day" : "@nedele",
+      "timeFrom" : "09:00:00",
+      "timeTo" : "21:00:00"
+    },
+    "rozvoz_boskovice_pondeli" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@boskovice",
+      "day" : "@pondeli",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_boskovice_utery" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@boskovice",
+      "day" : "@utery",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_boskovice_streda" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@boskovice",
+      "day" : "@streda",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_boskovice_ctvrtek" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@boskovice",
+      "day" : "@ctvrtek",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_boskovice_patek" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@boskovice",
+      "day" : "@patek",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "23:00:00"
+    },
+    "rozvoz_boskovice_sobota" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@boskovice",
+      "day" : "@sobota",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "23:00:00"
+    },
+    "rozvoz_boskovice_nedele" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@boskovice",
+      "day" : "@nedele",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_vyskov_pondeli" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@vyskov",
+      "day" : "@pondeli",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_vyskov_utery" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@vyskov",
+      "day" : "@utery",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_vyskov_streda" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@vyskov",
+      "day" : "@streda",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_vyskov_ctvrtek" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@vyskov",
+      "day" : "@ctvrtek",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_vyskov_patek" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@vyskov",
+      "day" : "@patek",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "01:00:00"
+    },
+    "rozvoz_vyskov_sobota" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@vyskov",
+      "day" : "@sobota",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "01:00:00"
+    },
+    "rozvoz_vyskov_nedele" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@vyskov",
+      "day" : "@nedele",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_zabreh_pondeli" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@zabreh",
+      "day" : "@pondeli",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_zabreh_utery" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@zabreh",
+      "day" : "@utery",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_zabreh_streda" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@zabreh",
+      "day" : "@streda",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_zabreh_ctvrtek" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@zabreh",
+      "day" : "@ctvrtek",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_zabreh_patek" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@zabreh",
+      "day" : "@patek",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "23:00:00"
+    },
+    "rozvoz_zabreh_sobota" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@zabreh",
+      "day" : "@sobota",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "23:00:00"
+    },
+    "rozvoz_zabreh_nedele" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@zabreh",
+      "day" : "@nedele",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_uherskybrod_pondeli" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@uherskybrod",
+      "day" : "@pondeli",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_uherskybrod_utery" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@uherskybrod",
+      "day" : "@utery",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_uherskybrod_streda" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@uherskybrod",
+      "day" : "@streda",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_uherskybrod_ctvrtek" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@uherskybrod",
+      "day" : "@ctvrtek",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_uherskybrod_patek" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@uherskybrod",
+      "day" : "@patek",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "23:00:00"
+    },
+    "rozvoz_uherskybrod_sobota" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@uherskybrod",
+      "day" : "@sobota",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "23:00:00"
+    },
+    "rozvoz_uherskybrod_nedele" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@uherskybrod",
+      "day" : "@nedele",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_mohelnice_pondeli" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@mohelnice",
+      "day" : "@pondeli",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_mohelnice_utery" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@mohelnice",
+      "day" : "@utery",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_mohelnice_streda" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@mohelnice",
+      "day" : "@streda",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_mohelnice_ctvrtek" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@mohelnice",
+      "day" : "@ctvrtek",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    },
+    "rozvoz_mohelnice_patek" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@mohelnice",
+      "day" : "@patek",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "23:00:00"
+    },
+    "rozvoz_mohelnice_sobota" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@mohelnice",
+      "day" : "@sobota",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "23:00:00"
+    },
+    "rozvoz_mohelnice_nedele" : {
+      "productTakeoverType" : "@rozvoz",
+      "localBusiness" : "@mohelnice",
+      "day" : "@nedele",
+      "timeFrom" : "10:00:00",
+      "timeTo" : "20:00:00"
+    }
+  }
+}

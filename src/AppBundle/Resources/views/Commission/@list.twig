@@ -1,0 +1,64 @@
+{% for cartItem in cart.cartItems %}
+    <div class="cartItem">
+        <div class="row row-no-margin">
+            {% if editable %}
+                {% set class = "col-10" %}
+            {% else %}
+                {% set class = "col-12" %}
+            {% endif %}
+            <div class="{{ class }}">
+                <img alt="{{cartItem.product.productBase.name}}" src="{{ asset('uploads/product_bases/thumbnails/' ~ cartItem.product.productBase.imageName) }}">
+                <div class="titles">
+                    <div class="title">{{ cartItem.product.productBase.name }}</div>
+                    {% if cartItem.product.productVariant is defined and cartItem.product.productVariant is not null %}
+                        <div class="subtitle">{{ cartItem.product.productVariant.name }}</div>
+                    {% endif %}
+                </div>
+            </div>
+            {% if editable %}
+                <div class="col-2">
+                    <form method="post" class="formRemoveCartItem">
+                        <input type="hidden" name="cartItemId" value="{{ cartItem.id }}">
+                        <button type="submit"><i class="fa fa-times"></i></button>
+                    </form>
+                </div>
+            {% endif %}
+        </div>
+        <div class="row row-no-margin">
+            <div class="col-12">
+                <div class="productAdditions">
+                    {% for pa in cartItem.productAdditions %}
+                        <div class="productAddition">
+                            <span class="title">{{ pa['productAddition'].name }}:</span>
+                            {% for pai in pa['productAdditionItems'] %}
+                                <span class="value">{{ pai.name }}</span>{% if not loop.last %}, {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="row row-no-margin price">
+            <div class="col-7 text-left">
+                Cena za položku:
+            </div>
+            <div class="col-5">
+                {{ cartItem.pricePerUnit|nicePrice('cs') }}
+            </div>
+        </div>
+    </div>
+{% endfor %}
+<div class="row takeOverPrice">
+    <div class="col-7 text-left">{{ cart.takeOverType.name }}:</div>
+    <div class="col-5">
+        {{ cart.takeOverType.price|nicePrice('cs') }}
+    </div>
+</div>
+<div class="row row-no-margin grandPrice">
+    <div class="col-7 text-left">
+        Cena celkem:
+    </div>
+    <div class="col-5">
+        {{ cart.price|nicePrice('cs') }}
+    </div>
+</div>

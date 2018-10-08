@@ -1,0 +1,15 @@
+{% if localBusiness is defined %}
+    <p>Na tuto adresu dovážíme ze stánku {{ localBusiness.name }}.</p>
+    <h2>Otevírací doba stánku pro rozvoz:</h2>
+    <div class="ops">
+        {% for op in localBusiness.openingHours %}
+
+            {% if op.productTakeOverType.slug == 'necham-si-dovezt' %}
+                <p><strong>{{ op.day.name }}</strong>: {{ op.timeFrom|date('H:i') }} - {{ op.timeTo|date('H:i') }}</p>
+            {% endif %}
+
+        {% endfor %}
+    </div>
+{% else %}
+    <p>Na tuto adresu bohužel nerozvážíme.</p>
+{% endif %}

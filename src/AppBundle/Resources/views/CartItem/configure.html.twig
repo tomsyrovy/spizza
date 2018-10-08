@@ -1,0 +1,48 @@
+{% form_theme form "@App/form_configurator_layout.html.twig" %}
+<span class="close">&times;</span>
+<div class="cartItemConfigure">
+    <div id="productDataSet" class="hidden">{{ productDataSet }}</div>
+
+    {{ form_start(form, {'attr' : {'id' : 'formConfigurator'}}) }}
+    <div class="row">
+        <div class="col-4">
+            <div class="title">{{ product.productBase.name }}</div>
+            {% if product.productVariant is defined and product.productVariant is not null %}
+                <div class="subtitle">{{ product.productVariant.name }}</div>
+            {% endif %}
+            <img src="{{ asset('uploads/product_bases/thumbnails/' ~ product.productBase.imageName) }}" alt="{{ product.productBase.name }}">
+            <div class="product-materials">
+                {% if product.productBase.productMaterials|length > 0 %}
+                    <div class="product-materials">
+                        {% for material in product.productBase.productMaterials %}
+                            <span>{% if loop.first %}{{material.name}}{% else %}{{material.name|lower}}{% endif %}{% if not loop.last %}, {% endif %}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            {% if product.productBase.productAllergens|length > 0 %}
+                <div class="product-allergens" style="margin-top: 20px;">
+                    Alergeny:
+                    {% for allergen in product.productBase.productAllergens %}
+                        {{allergen.name}}{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+        </div>
+        <div class="col-8">
+            <div class="title">Vyberte si doplňky:</div>
+            {{ form_widget(form) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 text-left price">
+            <div class="title">Konečná cena: <span id="totalProductPrice">{{ product.price|number_format("2", ",", " ") }}</span></div>
+        </div>
+        <div class="col-6 text-right">
+            <input type="submit" value="Vložit do košíku" class="chooseProduct">
+        </div>
+    </div>
+    {{ form_end(form) }}
+
+</div>

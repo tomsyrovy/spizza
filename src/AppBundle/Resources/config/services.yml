@@ -1,0 +1,44 @@
+services:
+
+    app.admin.product_base:
+        class: AppBundle\Admin\ProductBaseAdmin
+        arguments: [~, AppBundle\Entity\ProductBase, AppBundle:ProductBaseAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Sortiment, label: Základní produkty, icon: "<i class=\"fa fa-list\"></i>" }
+
+    app.admin.product:
+        class: AppBundle\Admin\ProductAdmin
+        arguments: [~, AppBundle\Entity\Product, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Sortiment, label: Produkty }
+
+    app.admin.product_variant:
+        class: AppBundle\Admin\ProductVariantAdmin
+        arguments: [~, AppBundle\Entity\ProductVariant, PixSortableBehaviorBundle:SortableAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Vlastnosti produktů, label: Varianty, icon: "<i class=\"fa fa-gear\"></i>"  }
+
+    app.admin.product_category:
+        class: AppBundle\Admin\ProductCategoryAdmin
+        arguments: [~, AppBundle\Entity\ProductCategory, PixSortableBehaviorBundle:SortableAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Vlastnosti produktů, label: Kategorie }
+
+    app.admin.product_material:
+        class: AppBundle\Admin\ProductMaterialAdmin
+        arguments: [~, AppBundle\Entity\ProductMaterial, PixSortableBehaviorBundle:SortableAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Vlastnosti produktů, label: Suroviny }
+
+    app.admin.product_attribute:
+        class: AppBundle\Admin\ProductAttributeAdmin
+        arguments: [~, AppBundle\Entity\ProductAttribute, PixSortableBehaviorBundle:SortableAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Vlastnosti produktů, label: Atributy }
+
+    app.admin.product_label:
+        class: AppBundle\Admin\ProductLabelAdmin
+        arguments: [~, AppBundle\Entity\ProductLabel, PixSortableBehaviorBundle:SortableAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Vlastnosti produktů, label: Štítky }
+

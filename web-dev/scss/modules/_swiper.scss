@@ -1,0 +1,51 @@
+/**
+ * Swiper
+ */
+
+
+.swiper {
+	margin-top: -100px;
+	margin-bottom: -100px;
+
+	@media only screen and (min-width: $screen-md) {
+		margin-top: -128px;
+		margin-bottom: -135px;
+	}
+}
+
+.swiper-slide {
+	// height: 400px;
+
+	img {
+		max-width: 100%;
+	}
+}
+
+.swiper-button {
+	opacity: .6;
+	transition: .5s;
+
+	&:hover {
+		transform: scale(1.4);
+	}
+}
+
+.swiper-button-disabled {
+	opacity: .05;
+}
+
+.swiper-button-prev {
+	left: 10px;
+
+	@media only screen and (min-width: $screen-md) {
+		left: 30px;
+	}
+}
+
+.swiper-button-next {
+	right: 10px;
+
+	@media only screen and (min-width: $screen-md) {
+		right: 30px;
+	}
+}

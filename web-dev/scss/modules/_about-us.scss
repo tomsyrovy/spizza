@@ -1,0 +1,27 @@
+/**
+ * about-us
+ */
+
+
+.about-us {
+	background: url("#{$assets}/images/wood-header-bottom.png") no-repeat center bottom;
+	height: 264px;
+	margin-bottom: -50px;
+	position: relative;
+	z-index: 200;
+	box-sizing: border-box;
+	padding-top: 150px;
+
+	@media only screen and (min-width: $screen-md) {
+		padding-top: 160px;
+	}
+
+	.about-us-inner {
+		width: 60%;
+		margin: 0 auto;
+		padding: 20px;
+		background: rgba(255, 255, 255, 0.9);
+		border-radius: 50px;
+		box-shadow: 0 10px 25px #383838;
+	}
+}

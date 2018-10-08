@@ -1,0 +1,39 @@
+/**
+ * Variables
+ */
+
+
+/** Custom variables */
+$color: #ff5800;
+$yellow: #FFBA00;
+$green: #197A30;
+$red: #FF0000;
+$black: #000;
+$white: #FFF;
+
+
+
+/** General framework variables */
+$font-family: "Enriqueta", serif;
+$font-size: 15px;
+$line-height: 150%;
+$font: #{$font-size} / #{$line-height} $font-family;
+$font-color: #000; // Default font color
+$font-color-light: scale-color($font-color, 50%);
+$p-margin: 20px 0;
+$assets: "../../../assets";
+
+
+/** Grid system variables */
+/**
+ * For fixed (non-responsive) layout just
+ */
+$screen-sm: 375px;
+$screen-md: 768px; // Optimally 767 for portrait display on iPad
+$screen-lg: 1180px;
+
+$grid-columns: 12; // Number of available columns
+$grid-gutter: 10px; // Inner padding on each side of a column to create gutters
+$grid-float-breakpoint: $screen-md; // Point at which the floats kick in and horizontally align columns
+$grid-row-bottom-margin: 20px; // Row bottom margin for all screen sizes
+$grid-col-bottom-margin: 20px; // Column bottom margin for screen size < @screen-sm

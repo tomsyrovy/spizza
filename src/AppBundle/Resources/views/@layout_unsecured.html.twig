@@ -1,0 +1,56 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+
+            <a title="Přejít na úvodní stranu" href="{{ path('app.default.index') }}"><img class="header-logo" src="{{ asset('assets/images/spizza-logo.png') }}" alt="Špizza rodinná pizza"></a>
+
+
+            <nav class="nav">
+                <ul>
+                    <li><a title="Objednat si" href="{{ path('app.default.index') }}#objednat-si">Objednat si</a></li>
+                    <li><a title="O nás" href="{{ path('static.default.index', {'slug': 'o-nas'}) }}">O nás</a></li>
+                    <li><a title="Kontakty" href="{{ path('static.default.kontakty') }}">Kontakty</a></li>
+                    <li><a title="" href="#">Přihlásit se</a></li>
+                </ul>
+            </nav> <!-- /.nav -->
+
+        </div> <!-- /.container -->
+    </header> <!-- /.header -->
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <img src="{{ asset('assets/images/bazalka-2.png') }}" alt="bazalka" class="bazalka">
+        <ul class="footer-nav">
+            <li>
+                <a href="{{ path('static.default.kontakty') }}">Kontakty</a>
+            </li>
+            <li>
+                <a title="O nás" href="{{ path('static.default.index', {'slug': 'o-nas'}) }}">O nás</a>
+            </li>
+            <li>
+                <a href="#">Kariéra</a>
+            </li>
+            <li>
+                <a title="Obchodní podmínky" href="{{ path('static.default.index', {'slug': 'obchodni-podminky'}) }}">Obchodní podmínky</a>
+            </li>
+            <li>
+                <a title="Franšíza" href="{{ path('static.default.index', {'slug': 'franchising'}) }}">Franšíza</a>
+            </li>
+        </ul>
+        <div class="footer-logo">
+            <img src="{{ asset('assets/images/footer-logo.png') }}" alt="Spizza logo white">
+            <div>
+                ŠPIZZA PIZZA s.r.o. <br>
+                Úsobrno 92, 679 39
+            </div>
+        </div>
+    </footer>
+
+{% endblock %}

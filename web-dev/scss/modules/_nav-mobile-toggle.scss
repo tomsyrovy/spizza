@@ -1,0 +1,100 @@
+/**
+ * Mobile Navigation Toggle
+ *
+ * <!-- Nav Mobile Toggle -->
+ * <span class="nav-mobile-toggle">
+ *		<span></span>
+ *		<span></span>
+ *		<span></span>
+ *		Menu
+ * </span> <!-- /.nav-mobile-toggle -->
+ */
+
+
+.nav-mobile-toggle {
+	display: block;
+	position: absolute;
+	right: 20px;
+	top: 22px;
+	cursor: pointer;
+	vertical-align: top;
+	line-height: normal;
+	z-index: 1000000;
+	margin: 0;
+	width: 44px;
+	height: 25px;
+	padding-top: 28px;
+	color: #fff;
+	font-size: 19px;
+	// text-transform: uppercase;
+	transform: rotate(0deg);
+	transition: .25s ease-in-out;
+	cursor: pointer;
+	font-weight: 300;
+
+	&:hover {
+		//background: @yellow;
+		color: red;
+
+		span {
+			background: red;
+		}
+	}
+
+	span {
+		display: block;
+		position: absolute;
+		height: 1px;
+		width: 44px;
+		background: #fff;
+		border-radius: 5px;
+		opacity: 1;
+		left: 0;
+		transform: rotate(0deg);
+		transition: .25s ease-in-out;
+	}
+
+	span:nth-child(1) {
+		top: 0;
+		transform-origin: left center;
+	}
+
+	span:nth-child(2) {
+		top: 10px;
+		transform-origin: left center;
+	}
+
+	span:nth-child(3) {
+		top: 20px;
+		transform-origin: left center;
+	}
+
+	&.open {
+		color: red;
+	}
+
+	&.open span:nth-child(1) {
+		transform: rotate(45deg);
+		top: -7px;
+		left: 6px;
+		background: red;
+	}
+
+	&.open span:nth-child(2) {
+		width: 0%;
+		opacity: 0;
+	}
+
+	&.open span:nth-child(3) {
+		transform: rotate(-45deg);
+		top: 25px;
+		left: 6px;
+		background: red;
+	}
+}
+
+@media only screen and (min-width: $screen-lg) {
+	.nav-mobile-toggle {
+		display: none;
+	}
+}
